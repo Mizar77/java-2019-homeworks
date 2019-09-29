@@ -13,3 +13,7 @@
 		2. 在`myhomework`下编写代码，代码使用`git add .`, `git commit -a` 和`git push`等命令进行管理；
 		3. 在`javalover/java-2019-homeworks`进入当前作业目录，例如`java-2019-homeworks/1-LanguageBasics`，执行`git submodule add https://github.com/javalover/myhomework 张三-151220001`,此处“张三”和“151220001” 分别替换真实姓名和学号。  
 5. 在`javalover/java-2019-homeworks`上创建“Pull request"，然后在QQ群内联系助教请其审核后合并。
+
+# 作业提交要求
+
+1. 提交到本仓库的文件夹应只包含源代码，代码调试期间生成的其他文件请通过 .gitignore 文件屏蔽，关于 .gitignore 文件的作用和基本语法规则请自行查找教程，可以在该网站上一键生成目标系统和IDE所需的通用 .gitignore文件 http://www.gitignore.io/

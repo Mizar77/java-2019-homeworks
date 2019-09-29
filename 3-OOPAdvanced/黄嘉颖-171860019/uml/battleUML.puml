@@ -1,0 +1,14 @@
+@startuml
+
+class Battle {
+    - Space battleField;
+    - HuluwaTeam huluwaTeam;
+    - SnakeTeam snakeTeam;
+}
+
+Battle *-up- Space :contains >
+Space *-up- Creature :contains >
+Battle *-up- HuluwaTeam :contains >
+Battle *-up- SnakeTeam :contains >
+
+@enduml

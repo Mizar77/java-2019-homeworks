@@ -1,0 +1,91 @@
+@startuml
+title Project_OOPADVANCED
+
+class Creature{
+    +void reportIdentification()
+}
+
+class GoodOnes
+class Genie
+
+Creature<|--GoodOnes
+Creature<|--Genie
+
+class Grandfater
+enum Color
+enum Seniority
+class CalabashBrother{
+    -Color color
+    -Seniority seniority
+}
+
+CalabashBrother "1" o-- "1" Color
+CalabashBrother "1" o-- "1" Seniority
+
+GoodOnes<|--Grandfater
+GoodOnes<|--CalabashBrother
+
+class Goblin
+class Snake
+class Scorpion
+
+Genie<|--Goblin
+Genie<|--Snake
+Genie<|--Scorpion
+
+class Position{
+    -int x //横坐标
+    -int y //纵坐标
+    -boolean isEmpty //坐标是否被占用
+    -Creature creature  //坐标被何种生物占用
+
+    +void setPosition(int,int) //为当前坐标设立横纵坐标数值
+    +Creature getCreature() //得到当前坐标存在的生物
+    +void setCreature(Creature)//为当前坐标设值生物
+}
+
+Position "1" o-- "1"Creature
+
+class Arena{
+    -Position [][]room  //NxN二维空间
+    -RandomSorter rdSorter //乱序排序器
+    -NormalSorter nmSoter //正序排序器
+    -Layout layout//布阵器
+    +Arena()
+    +void printArena()  //绘制二维空间
+    +void clearArena()  //清除二维空间
+    +void setAlliance(Position[],Creature[],int) //为指定的坐标组设置生物组
+    +void setArena(Position[],int) //在二维空间中设置指定的坐标组拥有的生物组
+}
+
+note left of Arena:二维空间主类
+
+Arena "1" o-- "n"Position
+
+interface Sorter{
+    +void sort(Position[],int)
+}
+
+class RandomSorter
+class NormalSorter
+
+Sorter <|.. RandomSorter
+Sorter <|.. NormalSorter
+Arena "1" o--"1" RandomSorter
+Arena "1" o--"1" NormalSorter
+
+interface Comparable{
+    +boolean compare(Compare another)
+}
+
+Comparable <|.. CalabashBrother
+
+class Layout{
+    +Position[] setChangShe(int)
+    +Position[] setHeYi(Creature[])
+    +Position[] setYanXing(Creature[])
+    +Position[] setChongE(Creature[])
+}
+Arena "1" o-- "1" Layout
+
+@enduml

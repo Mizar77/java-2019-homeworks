@@ -1,0 +1,82 @@
+@startuml
+
+class Creature {
+    - String name;
+    - Image picture;
+    - String picturePath;
+    - int coordinateX;
+    - int coordinateY;
+    --
+    + public int getCoordinateX()
+    + public int getCoordinateY()
+    + public String getName()
+    + public String getPicturePath()
+    + public Image getPicture()
+    + public void setCoordinateX(int x)
+    + public void setCoordinateY(int y)
+    + public void moveFrom(Space battleground)
+    + public void moveTo(Space battleground, int x, int y)
+    + public Stack<Coordinate> moveFromTo(Space battleground,int destX,int destY)
+}
+
+class Demon
+Demon -left-|>Creature:extend
+
+class Bat
+Bat -left-|>Demon:extend
+
+class Bee
+Bee -left-|>Demon:extend
+
+class Centipede
+Centipede -left-|>Demon:extend
+
+class Frog
+Frog -left-|>Demon:extend
+
+class Scorpion
+Scorpion -left-|>Demon:extend
+
+class Snake
+Snake -left-|>Demon:extend
+
+class Huluwa{
+    +getRank()
+}
+Huluwa -right-|>Creature:extend
+
+class Grandpa
+Grandpa -right-|>Creature:extend
+
+
+class HuluwaTeam{
+    - Huluwa brothers[];
+    - Grandpa cheerleader;
+    --
+    + public Grandpa getCheerleader()
+    + public Huluwa getTheSpecificHuluwa(int i)
+    + public Huluwa[] getBrothers()
+    + public void randomQueue()
+    + public void bubbleSort
+    + public void generateTheSpecificPattern(queuepattern pattern, Space battleground, int x, int y)
+    + public void generateTheCheerPattern(Space battleground, int x, int y)
+}
+
+HuluwaTeam *-up- Huluwa :contains >
+HuluwaTeam *-up- Grandpa :contains >
+
+class SnakeTeam{
+    - Demon demons[];
+    - Snake cheerleader;
+    --
+    + public Snake getCheerleader()
+    + public Demon[] getDemons()
+    + public void generateTheSpecificPattern(queuepattern pattern, Space battleground, int x, int y)
+    + public void generateTheCheerPattern(Space battleground, int x, int y)
+}
+
+SnakeTeam *-up- Demon :contains >
+SnakeTeam *-up- Snake :contains >
+
+
+@enduml

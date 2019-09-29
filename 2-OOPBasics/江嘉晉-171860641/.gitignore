@@ -1,0 +1,5 @@
+#ignore all .class files
+*.class
+
+#ignoew folder named '.vscode'
+.vscode/

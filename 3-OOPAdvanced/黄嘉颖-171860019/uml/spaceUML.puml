@@ -1,0 +1,44 @@
+@startuml
+
+class Cell{
+    - int coordinateX;
+    - int coordinateY;
+    - Creature creatureOnTheCell;
+    --
+    + public int getCoordinateX()
+    + public int getCoordinateY()
+    + public Creature getCreatureOnTheCell()
+    + public void setCoordinateX(int x)
+    + public void setCoordinateY(int y)
+    + public void setCreatureOnTheCell(Creature newCreature)
+    + public boolean isCellEmpty()
+    + public void removeCreatureOnTheCell()
+}
+
+
+class Space{
+    - int sizeX;
+    - int sizeY;
+    - Cell battleField[][];
+    --
+    + public int getSizeX()
+    + public int getSizeY()
+    + public Creature getTheCreatureOnTheCell(int x, int y)
+    + public void setTheCreatureOnTheCell(int x,int y,Creature newCreature)
+    + public boolean isExceedTheBattleField(int x,int y)
+    + public boolean isTheCellEmpty(int x,int y)
+    + public void removeTheCreature(int x,int y)
+}
+
+class Coordinate{
+    - int x;
+    - int y;
+    --
+    + public int getX()
+    + public int getY()
+}
+
+Space *-up- Cell :contains >
+
+
+@enduml

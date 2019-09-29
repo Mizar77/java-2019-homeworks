@@ -1,0 +1,79 @@
+@startuml
+class Being{
+    String name
+    int x
+    int y
+    void move(int destx, int desty)
+}
+class Calabash{
+    String color
+    Calabash()
+    Calabash(String name, String color)
+}
+class Grandfather{
+    Grandfather(String name)
+    void cheerUp()
+}
+class Heeler{
+    Heeler(String name)
+}
+class Scorpion{
+    Scorpion(String name)
+}
+class Snake{
+    Snake(String name)
+    void cheerUp()
+}
+class Map{
+    boolean [][]map
+    Map()
+}
+class Formation{
+    String name
+    Map m
+}
+class FormationBook{
+    Formation []formbook
+    FormationBook()
+    Map getMap(String form)
+}
+class Camp{
+    Being cheerUper
+    Being []members
+    Map m
+    FormationBook book
+    void changeMap(String form)
+    void arrangePosition(String form)
+}
+class CalabashBrothers{
+    CalabashBrothers()
+    void arrangePosition(String form)
+}
+class Monsters{
+    Monsters(int n)
+    void arrangePosition(String form)
+}
+
+Being  <|-- Grandfather
+Being  <|-- Calabash
+Being  <|-- Heeler
+Being  <|-- Scorpion
+Being  <|-- Snake
+
+CalabashBrothers o-- Calabash
+CalabashBrothers o-- Grandfather
+
+Monsters o-- Heeler
+Monsters o-- Scorpion
+Monsters o-- Snake
+
+Camp <|-- CalabashBrothers 
+Camp <|-- Monsters
+
+FormationBook o-- Formation
+Formation o-- Map
+
+Camp o-- Map
+Camp o-- FormationBook
+
+@enduml

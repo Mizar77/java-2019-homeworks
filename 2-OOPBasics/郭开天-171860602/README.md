@@ -1,0 +1,1 @@
+本程序分为三个类，分别是主类OOPBasic和HuluBrothers以及HuluBoy。HuluBoy类代表葫芦娃，提供了葫芦娃的位次和颜色，以及打印位次和颜色的方法。HuluBrothers中维护了一个由7个HuluBoy对象组成的数组，分别对应七个葫芦娃，它还提供了打乱葫芦娃次序，和两种排序和输出算法。OOPBasic中创建了HuluBrothers类的对象，并向它发送信息以执行各种操作。

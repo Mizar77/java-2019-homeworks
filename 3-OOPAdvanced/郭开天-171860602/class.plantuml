@@ -1,0 +1,73 @@
+@startuml
+class Map{
+    int xmin
+    int ymin
+    int xmax
+    int ymax
+    Creature[][]map
+    Map()
+    boolean isInmap()
+    boolean isOccupied()
+    void printMap()
+}
+
+class Formation{
+    int num
+    Location[]locations
+    int xmin
+    int ymin
+    int xmax
+    int ymax
+    Formation()
+    Location getLocation()
+}
+
+class Location{
+    int x
+    int ymax
+    Location()
+}
+
+class Creature{
+    string name
+    int x
+    int y
+    Map map
+    boolean camp
+    Creature()
+    void getLocation()
+    void moveTo()
+    void warpTo()
+}
+
+class Member{
+    Member()
+    Captain caption
+}
+
+class Captain{
+    int nom
+    Member[]Members
+    Formation formation
+    boolean inline
+    Captain()
+    void lineUp()
+    void dissMiss()
+    void warpJump()
+    void march()
+}
+
+class OOPAdvanced{
+    +void main()
+}
+
+Creature<|--Member
+Creature<|--Capatin
+Map o--Creature
+Creature o--Map
+Formation o-- Location
+Caption o--Member
+Member o--Caption
+Caption o--Formation
+
+@enduml

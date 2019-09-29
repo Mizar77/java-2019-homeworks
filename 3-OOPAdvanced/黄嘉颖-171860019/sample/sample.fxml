@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1280.0" prefWidth="1920.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="810.0" prefWidth="1500.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Canvas fx:id="canvas" height="800.0" onDragDetected="#canvasOnMouseClicked" onMouseClicked="#canvasOnMouseClicked" onMouseDragged="#canvasOnMouseDragged" width="1500.0" />
+            <VBox layoutX="1180.0" layoutY="20.0" prefHeight="769.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button fx:id="heyiDemonTeam" mnemonicParsing="false" onAction="#heyiDemonTeamOnAction" prefHeight="60.0" prefWidth="100.0" text="鹤翼队形" />
+                  <Button fx:id="yanxingDemonTeam" mnemonicParsing="false" onAction="#yanxingDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="雁行队形" />
+                  <Button fx:id="chongeDemonTeam" mnemonicParsing="false" onAction="#chongeDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="衝轭队形" />
+                  <Button fx:id="changsheDemonTeam" mnemonicParsing="false" onAction="#changsheDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="长蛇队形" />
+                  <Button fx:id="yulinDemonTeam" mnemonicParsing="false" onAction="#yulinDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="鱼鳞队形" />
+                  <Button fx:id="fangyuanDemonTeam" mnemonicParsing="false" onAction="#fangyuanDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="方円队形" />
+                  <Button fx:id="yanyueDemonTeam" mnemonicParsing="false" onAction="#yanyueDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="偃月队形" />
+                  <Button fx:id="fengshiDemonTeam" mnemonicParsing="false" onAction="#fengshiDemonTeamOnAction" prefHeight="60.0" prefWidth="120.0" text="锋矢队形" />
+                  <Button fx:id="snakeCheer" mnemonicParsing="false" onAction="#snakeCheerOnAction" prefHeight="60.0" prefWidth="120.0" text="蛇精助威" />
+                  <Button fx:id="randomChange" mnemonicParsing="false" onAction="#randomChangeOnAction" prefHeight="60.0" prefWidth="120.0" text="随机变换" />
+               </children>
+            </VBox>
+            <Button fx:id="randomHuluTeam" contentDisplay="CENTER" mnemonicParsing="false" onAction="#randomHuluTeamOnAction" prefHeight="60.0" prefWidth="100.0" text="葫芦娃登场" />
+            <Button fx:id="grandpaCheer" contentDisplay="CENTER" layoutY="200.0" mnemonicParsing="false" onAction="#grandpaCheerOnAction" prefHeight="60.0" prefWidth="100.0" text="爷爷助威" />
+            <ImageView fx:id="selectedImage" fitHeight="100.0" fitWidth="100.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="selectedLabel" layoutX="20.0" layoutY="400.0" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER" />
+            <Button fx:id="shexingHuluTeam" contentDisplay="CENTER" layoutY="100.0" mnemonicParsing="false" onAction="#shexingHuluTeamOnAction" prefHeight="60.0" prefWidth="100.0" text="葫芦娃列阵" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>

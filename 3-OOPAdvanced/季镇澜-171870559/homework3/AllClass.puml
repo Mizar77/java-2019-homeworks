@@ -1,0 +1,52 @@
+@startuml
+
+@startuml
+package homework3{
+class Creature {
+    +String name;
+    -Pair<Integer, Integer> location;
+    +void changeLocation(int x, int y)
+}
+
+class Huluwa extends Creature {
+    +int rank;
+}
+
+class Leader extends Creature {
+    -static Map<Integer, Pair<String, Integer>> formationMap;
+    -Creature[] subordinate;
+    -Checkerboard theBoard;
+    -int startX;
+    -int startY;
+    +void arrange()
+    #void arrangeFormation(int formationNo)
+}
+class Elder extends Leader {
+    +void arrange()
+}
+
+class Snake extends Leader{
+    +void arrange()
+}
+
+class Checkerboard {
+    -String[][] theBoard;
+    +void modify(int x, int y, String name)
+    +void clear()
+    +void print()
+}
+
+class Admin {
+    -{static} Checkerboard theboard;
+    -{static} Elder theElder;
+    -{static} Snake theSnake;
+    +{static} void main(String args[])
+}
+
+Checkerboard o-- Admin
+Checkerboard o-- Leader
+Elder o-- Admin
+Snake o-- Admin
+Creature o-- Leader
+
+@enduml

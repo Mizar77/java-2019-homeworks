@@ -1,0 +1,17 @@
+@startuml
+
+class Navigation {
+    - int sizeM;
+    - int sizeN;
+    - Queue<Coordinate> queue;
+    - boolean visit[][];
+    - Coordinate pre[][];
+    - int distance[][];
+    --
+    +public Stack<Coordinate> useTheNavigation(Space battleField,Creature creatureCurrent,int destX,int destY)
+}
+
+Navigation *-up- Coordinate :contains >
+Navigation *-up- Queue :contains >
+Navigation *-up- Stack :contains >
+@enduml

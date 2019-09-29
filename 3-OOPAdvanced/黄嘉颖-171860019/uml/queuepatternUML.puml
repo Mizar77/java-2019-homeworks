@@ -1,0 +1,21 @@
+@startuml
+
+
+interface QueuePattern {
+    +void generateTheSpecificPattern(Space battleground, SnakeTeam snakeTeam, int x, int y)
+    +void generateTheSpecificPattern(Space battleground, HuluwaTeam huluwaTeam, int x, int y)
+}
+
+class ChangshePattern
+ChangshePattern .up.|>QueuePattern :implement
+ChongePattern .up.|>QueuePattern :implement
+FangyuanPattern .up.|>QueuePattern :implement
+FengshiPattern .up.|>QueuePattern :implement
+HeyiPattern .up.|>QueuePattern :implement
+YanxingPattern .up.|>QueuePattern :implement
+YanyuePattern .up.|>QueuePattern :implement
+YulinPattern .up.|>QueuePattern :implement
+
+
+
+@enduml
